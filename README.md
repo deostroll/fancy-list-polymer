@@ -11,3 +11,5 @@ To get started, `cd` into each project and type `polymer install`.
 > Note: requires `polymer-cli` installed
 
 Next, `cd` into the app project and type `polymer serve`. This will host a webpage at `http://localhost:8081/` by default.
+
+The angular counter part is available here: https://github.com/deostroll/fancy-list-angular
