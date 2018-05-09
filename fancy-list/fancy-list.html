@@ -1,0 +1,68 @@
+<link rel="import" href="bower_components/polymer/polymer-element.html">
+<link rel="import" href="bower_components/polymer/lib/elements/dom-repeat.html">
+
+<dom-module id="fancy-list">
+  <template>
+    <style>
+      :host {
+        --radius: 7px;
+        --border-string: 2px solid hotpink;
+      }
+
+      .my-list {
+        margin:0;
+        padding: 10px;
+        list-style-type: none;
+        font-family: Arial, sans-serif;
+      }
+
+      .my-list li {
+        padding: 10px;
+        border-left: var(--border-string);
+        border-right: var(--border-string);
+        border-bottom: var(--border-string);  
+      }
+
+      .my-list li:first-child {
+        border-top-left-radius: var(--radius);
+        border-top-right-radius: var(--radius);
+        border-top: var(--border-string);
+      }
+
+      .my-list li:last-of-type {
+        border-bottom-left-radius: var(--radius);
+        border-bottom-right-radius: var(--radius);
+      }
+
+    </style>
+    <ul class="my-list">
+      <template is="dom-repeat" items="{{items}}">
+        <li>{{item}}</li>
+      </template>
+    </ul>
+  </template>
+
+  <script>
+    class FancyList extends Polymer.Element {
+      static get is() { return 'fancy-list'; }
+      static get properties() {
+        return {
+          prop1 : {
+            type: String,
+            value: 'World'
+          },
+          list: {
+            type: String,
+            value: 'item1,item2,item3,item4'
+          }
+        };
+      }
+      ready() {
+        super.ready()
+        this.items = this.list.split(',');
+      }
+    }
+
+    window.customElements.define(FancyList.is, FancyList);
+  </script>
+</dom-module>

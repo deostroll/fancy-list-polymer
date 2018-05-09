@@ -1,0 +1,7 @@
+{
+  "name": "fancy-app",
+  "short_name": "fancy-app",
+  "description": "a simple application using fancy-list",
+  "start_url": "/",
+  "display": "standalone"
+}
